@@ -23,13 +23,19 @@ public class Whizard : MonoBehaviour
         snitchSound = GetComponent<AudioSource>();
     }
 
+    void OnJump()
+    {
+        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Jump"))
-        {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        }
+        // if(Input.GetButtonDown("Jump"))
+        // {
+        //     rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        // }
     }
 
     void OnCollisionEnter2D(Collision2D col)
